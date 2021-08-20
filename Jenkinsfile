@@ -6,9 +6,9 @@ pipeline {
     stages{
         stage("Build"){
            steps{
-               sh 'mvn clean package'
-                  
+               sh 'mvn clean package'     
            } 
+        }
            stage("Upload war to nexus"){
            steps{
                nexusArtifactUploader artifacts: [
@@ -28,7 +28,6 @@ pipeline {
                 version: '3.0.0'
                   
            } 
-        }
-    }   
+        }  
     }
 }
